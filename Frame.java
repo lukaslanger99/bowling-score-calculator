@@ -10,7 +10,6 @@ public class Frame {
         	System.out.println("Try: " + (i + 1) + " enter thrown pins");
         	tries[i] =  new Try(s.nextInt());
         }
-        s.close();
     }
     
     public Try[] getTries() {
