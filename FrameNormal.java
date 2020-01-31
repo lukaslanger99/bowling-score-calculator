@@ -5,9 +5,10 @@ public class FrameNormal extends Frame {
 
     public FrameNormal() {
         Scanner s = new Scanner(System.in);
-        for (Try try1 : tries) {
-            int score = s.nextLine();
-            try1 = new Try(score);
+        
+        for (int i = 0; i < tries.length; i++) {
+        	System.out.println("Try: " + (i + 1) + " enter thrown pins");
+            tries[i] =  new Try(s.nextInt());
         }
         s.close();
     }
