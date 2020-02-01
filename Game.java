@@ -14,7 +14,7 @@ public class Game {
     	Frame[] frames = new Frame[10];
     	for (int i = 0; i < frames.length; i++) {
     		System.out.println("Frame: " + (i + 1) + " ");
-    		frames[i] = new Frame();
+    		frames[i] = new Frame(i + 1);
 		}
     	return frames;
     }

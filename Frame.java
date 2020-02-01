@@ -4,8 +4,10 @@ public class Frame {
     private Try[] tries = new Try[2];
     private boolean spare;
     private boolean strike;
+    private int frameNumber;
 
-    public Frame() {
+    public Frame(int frameNumber) {
+        this.frameNumber = frameNumber;
         Scanner s = new Scanner(System.in);
         
         for (int i = 0; i < tries.length; i++) {
@@ -18,6 +20,10 @@ public class Frame {
                 this.spare = true;
             }
         }
+    }
+
+    public int getFrameNumber() {
+        return frameNumber;
     }
     
     public Try[] getTries() {
