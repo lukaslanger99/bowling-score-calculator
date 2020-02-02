@@ -46,10 +46,7 @@ public class Game {
     	int score = 0;
     	
     	for (Frame frame : frames) {
-			Try[] tries = frame.getTries();
-			for (Try currentTry : tries) {
-				score += currentTry.getScore();
-			}
+			score += frame.getScore();
 		}
     	return score;
     }
