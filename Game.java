@@ -25,17 +25,18 @@ public class Game {
 			boolean strikeStrikeStrike = frames[i].isStrike() && frames[i+1].isStrike() && frames[i+2].isStrike();
 			boolean strikeStrikeSpare = frames[i].isStrike() && frames[i+1].isStrike() && frames[i+2].isSpare();
 			boolean strikeStrike = frames[i].isStrike() && frames[i+1].isStrike();
+			int frameNumber = i + 1;
 
-			if (i < 9 && spare) {
+			if (frameNumber < 10 && spare) {
 				frames[i].addBonus(frames[i+1].getTries()[0].getScore());
 			}
-			if (i < 7 && strikeStrikeStrike) {
+			if (frameNumber < 9 && strikeStrikeStrike) {
 				frames[i].addBonus(20);
 			}
-			if (i < 7 && strikeStrikeSpare) {
+			if (frameNumber < 9 && strikeStrikeSpare) {
 				frames[i].addBonus(10 + frames[i+2].getTries()[0].getScore());
 			}
-			if (i < 8 && strikeStrike) {
+			if (frameNumber < 10 && strikeStrike) {
 				frames[i].addBonus(10);
 			}
 		}
