@@ -5,6 +5,7 @@ public class Frame {
     private boolean spare;
     private boolean strike;
     private int frameNumber;
+    private int score;
 
     public Frame(int frameNumber) {
         this.frameNumber = frameNumber;
@@ -15,15 +16,25 @@ public class Frame {
             tries[i] =  new Try(s.nextInt());
             if (i == 0 && tries[0].getScore() == 10) {
                 this.strike = true;
+                continue;
             }
             if (i == 1 && tries[0].getScore() + tries[1].getScore() == 10) {
                 this.spare = true;
             }
         }
+        this.score = tries[0].getScore() + tries[1].getScore();
     }
 
     public int getFrameNumber() {
         return frameNumber;
+    }
+
+    public void addBonus(int bonus) {
+        this.score += bonus;
+    }
+
+    public int getScore() {
+        return score;
     }
     
     public Try[] getTries() {
