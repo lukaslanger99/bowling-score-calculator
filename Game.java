@@ -13,8 +13,8 @@ public class Game {
     private Frame[] start() {
     	Frame[] frames = new Frame[10];
     	for (int i = 0; i < frames.length; i++) {
-    		System.out.println("Frame: " + (i + 1) + " ");
-    		frames[i] = new Frame(i + 1);
+			System.out.println("Frame: " + (i + 1) + " ");
+			frames[i] = (i != 9) ? new Frame(i + 1) : new LastFrame(i + 1);
 		}
     	return this.addBonus(frames);
 	}

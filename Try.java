@@ -17,4 +17,8 @@ public class Try {
     public int getScore() {
         return score;
     }
+
+    public void addBonus(int bonus) {
+        this.score += bonus;
+    }
 }

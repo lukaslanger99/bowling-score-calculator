@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Frame {
-    private Try[] tries = new Try[2];
+    private Try[] tries;
     private boolean spare;
     private boolean strike;
     private int frameNumber;
@@ -9,6 +9,7 @@ public class Frame {
 
     public Frame(int frameNumber) {
         this.frameNumber = frameNumber;
+        this.tries = new Try[2];
         Scanner s = new Scanner(System.in);
         
         for (int i = 0; i < tries.length; i++) {
@@ -16,7 +17,8 @@ public class Frame {
             tries[i] =  new Try(s.nextInt());
             if (i == 0 && tries[0].getScore() == 10) {
                 this.strike = true;
-                continue;
+                tries[1] =  new Try(0);
+                break;
             }
             if (i == 1 && tries[0].getScore() + tries[1].getScore() == 10) {
                 this.spare = true;
