@@ -4,6 +4,11 @@ public class Game {
     public Game() {
     	this.score = this.calculate(this.start());
     	this.printScore();
+	}
+	
+	public Game(int[][] set) {
+    	this.score = this.calculate(this.start(set));
+    	this.printScore();
     }
     
     public int getScore() {
@@ -15,6 +20,14 @@ public class Game {
     	for (int i = 0; i < frames.length; i++) {
 			System.out.println("Frame: " + (i + 1) + " ");
 			frames[i] = (i != 9) ? new Frame(i + 1) : new LastFrame(i + 1);
+		}
+    	return this.addBonus(frames);
+	}
+
+    private Frame[] start(int[][] set) {
+    	Frame[] frames = new Frame[10];
+    	for (int i = 0; i < frames.length; i++) {
+			frames[i] = (i != 9) ? new Frame(i + 1, set[i]) : new LastFrame(i + 1, set[i]);
 		}
     	return this.addBonus(frames);
 	}

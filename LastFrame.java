@@ -42,6 +42,25 @@ public class LastFrame extends Frame {
         }
     }
 
+    public LastFrame(int frameNumber, int[] set) {
+        super(1);
+        this.frameNumber = frameNumber;
+        this.tries = new Try[3];
+
+        tries[0] = new Try(set[0]);
+        tries[1] = new Try(set[1]);
+        tries[2] = new Try(set[2]);
+
+        this.score = tries[0].getScore() + tries[1].getScore() + tries[2].getScore();
+
+        if (tries[0].getScore() + tries[1].getScore() == 10) {
+            this.addBonus(tries[2].getScore());
+        }
+        if (tries[0].getScore() + tries[1].getScore() + tries[1].getScore() == 30) {
+            this.addBonus(20);
+        }
+    }
+
     public int getFrameNumber() {
         return frameNumber;
     }

@@ -27,6 +27,22 @@ public class Frame {
         this.score = tries[0].getScore() + tries[1].getScore();
     }
 
+    public Frame(int frameNumber, int[] set) {
+        this.frameNumber = frameNumber;
+        this.tries = new Try[2];
+
+        tries[0] = new Try(set[0]);
+        tries[1] = new Try(set[1]);
+        
+        if (tries[0].getScore() == 10) {
+            this.strike = true;
+        }
+        if (tries[0].getScore() + tries[1].getScore() == 10) {
+            this.spare = true;
+        }
+        this.score = tries[0].getScore() + tries[1].getScore();
+    }
+
     public int getFrameNumber() {
         return frameNumber;
     }
