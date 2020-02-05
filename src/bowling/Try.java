@@ -1,3 +1,5 @@
+package src.bowling;
+
 public class Try {
     private int score;
     private Try nextTry;

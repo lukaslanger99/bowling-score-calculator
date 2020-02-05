@@ -1,3 +1,5 @@
+package src.bowling;
+
 import java.util.Scanner;
 
 public class Frame {

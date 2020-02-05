@@ -1,3 +1,5 @@
+package src.bowling;
+
 public class Game {
 	private int score;
 	
