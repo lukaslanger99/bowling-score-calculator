@@ -43,7 +43,7 @@ public class LastFrame extends Frame {
     }
 
     public LastFrame(int frameNumber, int[] set) {
-        super(1);
+        super(frameNumber, set);
         this.frameNumber = frameNumber;
         this.tries = new Try[3];
 
