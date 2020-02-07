@@ -8,6 +8,10 @@ public class Try {
         this.score = score;
     }
 
+    public String toString() {
+        return "" + score;
+    }
+
     public void setNextTry(Try nextTry) {
         this.nextTry = nextTry;
     }

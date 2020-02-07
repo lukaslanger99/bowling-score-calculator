@@ -63,6 +63,10 @@ public class LastFrame extends Frame {
         }
     }
 
+    public String toString() {
+        return tries[0].toString() + ":" + tries[1].toString() + ":" + tries[2].toString();
+    }
+
     public int getFrameNumber() {
         return frameNumber;
     }

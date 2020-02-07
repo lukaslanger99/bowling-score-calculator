@@ -45,6 +45,10 @@ public class Frame {
         this.score = tries[0].getScore() + tries[1].getScore();
     }
 
+    public String toString() {
+        return tries[0].toString() + ":" + tries[1].toString();
+    }
+
     public int getFrameNumber() {
         return frameNumber;
     }
