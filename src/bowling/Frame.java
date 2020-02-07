@@ -46,7 +46,7 @@ public class Frame {
     }
 
     public String toString() {
-        return frameNumber + "-" + tries[0].toString() + ":" + tries[1].toString();
+        return frameNumber + "-" + tries[0] + ":" + tries[1];
     }
 
     public int getFrameNumber() {

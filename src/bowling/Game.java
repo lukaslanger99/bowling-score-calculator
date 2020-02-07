@@ -17,7 +17,7 @@ public class Game {
 	public String toString() {
 		String string = "";
 		for (int i = 0; i < frames.length; i++) {
-			string += frames[i].toString() + " _ ";
+			string += frames[i] + " _ ";
 		}
 		return string;
 	}
