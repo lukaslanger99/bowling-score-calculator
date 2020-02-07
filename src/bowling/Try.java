@@ -12,14 +12,6 @@ public class Try {
         return "" + score;
     }
 
-    public void setNextTry(Try nextTry) {
-        this.nextTry = nextTry;
-    }
-
-    public Try getNextTry() {
-        return nextTry;
-    }
-
     public int getScore() {
         return score;
     }

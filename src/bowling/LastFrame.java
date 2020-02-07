@@ -64,15 +64,11 @@ public class LastFrame extends Frame {
     }
 
     public String toString() {
-        return tries[0].toString() + ":" + tries[1].toString() + ":" + tries[2].toString();
+        return frameNumber + "-" + tries[0].toString() + ":" + tries[1].toString() + ":" + tries[2].toString();
     }
 
     public int getFrameNumber() {
         return frameNumber;
-    }
-
-    public void addBonus(int bonus) {
-        this.score += bonus;
     }
 
     public int getScore() {
@@ -80,7 +76,11 @@ public class LastFrame extends Frame {
     }
     
     public Try[] getTries() {
-    	return tries;
+        return tries;
+    }
+
+    public void addBonus(int bonus) {
+        this.score += bonus;
     }
 
     public boolean isSpare() {
