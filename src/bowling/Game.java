@@ -6,12 +6,10 @@ public class Game {
 	
     public Game() {
     	this.score = this.calculate(this.start());
-    	this.printScore();
 	}
 	
 	public Game(int[][] set) {
     	this.score = this.calculate(this.start(set));
-    	this.printScore();
 	}
 	
 	public String toString() {
@@ -80,7 +78,17 @@ public class Game {
     	return score;
     }
     
-    private void printScore() {
-    	System.out.println(this.getScore());
+    public void print() {
+		String string = "";
+		for (Frame frame : frames) {
+			string += frame + " _ ";
+		}
+		string += "\n";
+		int score = 0;
+		for (Frame frame : frames) {
+			score += frame.getScore();
+			string += score + " _____ ";
+		}
+		System.out.println(string);
     }
 }
