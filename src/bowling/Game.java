@@ -48,6 +48,7 @@ public class Game {
 	private Frame[] addBonus(Frame[] frames) {
 		for (int i = 0; i < frames.length; i++) {
 			boolean spare = frames[i].isSpare();
+			boolean strike = frames[i].isStrike() && !frames[i+1].isStrike() && !frames[i+1].isSpare();
 			boolean strikeStrikeStrike = frames[i].isStrike() && frames[i+1].isStrike() && frames[i+2].isStrike();
 			boolean strikeStrikeSpare = frames[i].isStrike() && frames[i+1].isStrike() && frames[i+2].isSpare();
 			boolean strikeStrike = frames[i].isStrike() && frames[i+1].isStrike();
@@ -64,6 +65,9 @@ public class Game {
 			}
 			if (frameNumber < 10 && strikeStrike) {
 				frames[i].addBonus(10);
+			}
+			if (frameNumber < 10 && strike) {
+				frames[i].addBonus(frames[i+1].getTries()[0].getScore() + frames[i+1].getTries()[1].getScore());
 			}
 		}
 		return frames;
