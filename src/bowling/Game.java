@@ -83,16 +83,14 @@ public class Game {
     }
     
     public void print() {
-		String string = "";
-		for (Frame frame : frames) {
-			string += frame + " _ ";
-		}
-		string += "\n";
+		String firstLine = "";
+		String secondLine = "";
 		int score = 0;
 		for (Frame frame : frames) {
+			firstLine += frame + " _ ";
 			score += frame.getScore();
-			string += score + " _____ ";
+			secondLine += score + " ____ ";
 		}
-		System.out.println(string);
+		System.out.println(firstLine + "\n" + secondLine);
     }
 }
