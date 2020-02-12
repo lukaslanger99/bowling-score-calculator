@@ -32,15 +32,7 @@ public class LastFrame extends Frame {
                     tries[i] =  new Try(s.nextInt());
                     break;
         }
-        this.score = tries[0].getScore() + tries[1].getScore() + tries[2].getScore();
-
-        if (tries[0].getScore() + tries[1].getScore() == 10) {
-            tries[i] =  new Try(s.nextInt());
-            this.addBonus(tries[i].getScore());
-        }
-        if (tries[0].getScore() + tries[1].getScore() == 20) {
-            this.addBonus(20);
-        }
+        this.score = scoreSum(tries);
         }
     }
 
@@ -53,14 +45,11 @@ public class LastFrame extends Frame {
         tries[1] = new Try(set[1]);
         tries[2] = new Try(set[2]);
 
-        this.score = tries[0].getScore() + tries[1].getScore() + tries[2].getScore();
+        this.score = scoreSum(tries);
+    }
 
-        if (tries[0].getScore() + tries[1].getScore() == 10) {
-            this.addBonus(tries[2].getScore());
-        }
-        if (tries[0].getScore() + tries[1].getScore() + tries[1].getScore() == 30) {
-            this.addBonus(20);
-        }
+    private int scoreSum(Try[] tries) {
+        return tries[0].getScore() + tries[1].getScore() + tries[2].getScore();
     }
 
     public String toString() {

@@ -22,11 +22,11 @@ public class Frame {
                 tries[1] =  new Try(0);
                 break;
             }
-            if (i == 1 && tries[0].getScore() + tries[1].getScore() == 10) {
+            else if (i == 1 && tries[0].getScore() + tries[1].getScore() == 10) {
                 this.spare = true;
             }
         }
-        this.score = tries[0].getScore() + tries[1].getScore();
+        this.score = scoreSum(tries);
     }
 
     public Frame(int frameNumber, int[] set) {
@@ -39,10 +39,14 @@ public class Frame {
         if (tries[0].getScore() == 10) {
             this.strike = true;
         }
-        if (tries[0].getScore() + tries[1].getScore() == 10) {
+        else if (tries[0].getScore() + tries[1].getScore() == 10) {
             this.spare = true;
         }
-        this.score = tries[0].getScore() + tries[1].getScore();
+        this.score = scoreSum(tries);
+    }
+
+    private int scoreSum(Try[] tries) {
+        return tries[0].getScore() + tries[1].getScore();
     }
 
     public String toString() {
